@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="container">
+
+  <form class="col-11">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+  <p class="link" (click)="changeView('forgot-username')">Forgot Username ></p>
+  <p class="link" (click)="changeView('forgot-pw')">Forgot Password ></p>
+  <p class="link" (click)="changeView('signup')">Sign Up ></p>
+
+</div>
