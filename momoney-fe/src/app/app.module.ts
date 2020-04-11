@@ -18,6 +18,7 @@ import { SummaryComponent } from './components/account/summary/summary.component
 import { DetailsComponent } from './components/account/details/details.component';
 import { TransactionComponent } from './components/account/transaction/transaction.component';
 import { UpdateComponent } from './components/user/update/update.component';
+import { ForgotUnameComponent } from './components/user/forgot-uname/forgot-uname.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UpdateComponent } from './components/user/update/update.component';
     SummaryComponent,
     DetailsComponent,
     TransactionComponent,
-    UpdateComponent
+    UpdateComponent,
+    ForgotUnameComponent
   ],
   imports: [
     BrowserModule,

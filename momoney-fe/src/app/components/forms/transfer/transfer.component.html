@@ -1,1 +1,23 @@
-<p>transfer works!</p>
+<h1>Transfer Money</h1>
+<form class="col-11">
+    <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input type="number" class="form-control" id="amount" min="1">
+    </div>
+    <div class="form-group">
+        <label for="accountFrom">Account From</label>
+        <select class="form-control" id="accountFrom">
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="accountTo">Account To</label>
+        <select class="form-control" id="accountTo">
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Transfer</button>
+</form>

@@ -1,1 +1,37 @@
-<p>autosave works!</p>
+<h1>Setup Autosave</h1>
+<form class="col-11">
+    <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input type="number" class="form-control" id="amount" min="1">
+    </div>
+    <div class="form-group">
+        <label for="accountFrom">Account From</label>
+        <select class="form-control" id="accountFrom">
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="accountTo">Account To</label>
+        <select class="form-control" id="accountTo">
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" id="startDate" required>
+    </div>
+
+    <div class="form-group">
+        <label for="frequency">Frequency</label>
+        <select class="form-control" id="frequency">
+            <option>Monthly</option>
+            <option>Bi-Weekly</option>
+            <option>Weekly</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Set Up</button>
+</form>
