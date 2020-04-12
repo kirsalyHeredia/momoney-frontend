@@ -16,9 +16,9 @@ import { CloseAcctComponent } from './components/forms/close-acct/close-acct.com
 import { ForgotPwComponent } from './components/user/forgot-pw/forgot-pw.component';
 import { SummaryComponent } from './components/account/summary/summary.component';
 import { DetailsComponent } from './components/account/details/details.component';
-import { TransactionComponent } from './components/account/transaction/transaction.component';
 import { UpdateComponent } from './components/user/update/update.component';
 import { ForgotUnameComponent } from './components/user/forgot-uname/forgot-uname.component';
+import { InfoComponent } from './components/user/info/info.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import { ForgotUnameComponent } from './components/user/forgot-uname/forgot-unam
     ForgotPwComponent,
     SummaryComponent,
     DetailsComponent,
-    TransactionComponent,
     UpdateComponent,
-    ForgotUnameComponent
+    ForgotUnameComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
