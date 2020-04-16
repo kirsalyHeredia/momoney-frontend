@@ -1,9 +1,9 @@
 <h1>Accounts</h1>
 
-<div class="container link" (click)="changeView('details')">
-    <h2>AccountType (...xxxx)</h2>
+<div *ngFor="let account of accounts$ | async" class="container link" (click)="viewDetails('details')">
+    <h2>{{account.accountType}} ({{account.accountNumber}})</h2>
     <div>
-        <p>$xxx.xx</p>
+        <p>{{account.balance | currency}}</p>
         <p>Available</p>
     </div>
 </div>
