@@ -6,10 +6,11 @@ export class Account {
     routingNumber: number;
     interestRate: number;
     autosave: number;
-    transactions: {
-        transactionId: number;
-        transactionAmount: number;
-        transactionType: string;
-        timestamp: string;
-    };
+}
+
+export class Transaction {
+    transactionId: number;
+    transactionAmount: number;
+    transactiontype: string;
+    timestamp: string;
 }
