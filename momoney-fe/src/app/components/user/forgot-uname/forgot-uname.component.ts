@@ -10,6 +10,7 @@ export class ForgotUnameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
