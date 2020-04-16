@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { DetailsComponent } from './components/account/details/details.component
 import { UpdateComponent } from './components/user/update/update.component';
 import { ForgotUnameComponent } from './components/user/forgot-uname/forgot-uname.component';
 import { InfoComponent } from './components/user/info/info.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { InfoComponent } from './components/user/info/info.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

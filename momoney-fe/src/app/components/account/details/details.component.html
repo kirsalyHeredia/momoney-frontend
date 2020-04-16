@@ -1,25 +1,25 @@
-<p class="link" (click)="changeView('accounts')">&lt; Go back to accounts</p>
+<p class="link" (click)="viewAccts('accounts')">&lt; Go back to accounts</p>
 
-<section class="acctDetails">
-    <h2>AccountType (...xxxx)</h2>
+<section *ngIf="account$" class="acctDetails">
+    <h2>{{account$.accountType}} ({{account$.accountNumber}})</h2>
     <div>
-        <p>$xxx.xx</p>
+        <p>{{account$.balance | currency}}</p>
         <p>Available</p>
     </div>
     <div>
-        <p>Account Number:</p>
-        <p>Routing Number:</p>
-        <p>Interest Rate:</p>
+        <p>Account Number: {{account$.accountNumber}}</p>
+        <p>Routing Number: {{account$.routingNumber}}</p>
+        <p>Interest Rate: {{account$.number}}</p>
         <p>Joint User(s):</p>
     </div>
 </section>
 
 <h2>Transactions</h2>
 <section class="transactions">
-    <div class="transaction">
-        <p>Action</p>
-        <p>Apr 9, 2020</p>
-        <p>$xxx.xx</p>
+    <div *ngFor= "let transaction of transactions$ | async" class="transaction">
+        <p>{{transaction.transactionType}}</p>
+        <p>{{transaction.transactionAmount}}</p>
+        <p>{{transaction.timestamp}}</p>
         <p>$xx.xx</p>
     </div>
 </section>
