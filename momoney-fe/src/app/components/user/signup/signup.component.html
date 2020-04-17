@@ -34,10 +34,10 @@
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input [class.is-invalid]="email.invalid && email.touched" formControlName="email" type="email" class="form-control" id="email">
+        <input [class.is-invalid]="email.invalid && email.touched" formControlName="email" type="string" class="form-control" id="email">
         <div *ngIf="email.invalid && email.touched">
             <small *ngIf="email.errors?.required" class="text-danger">This field is required</small>
-            <small *ngIf="email.errors?.email" class="text-danger">Not a valid email</small>
+            <small *ngIf="email.errors?.pattern" class="text-danger">Not a valid email</small>
         </div>
     </div>
     <div class="form-group">
