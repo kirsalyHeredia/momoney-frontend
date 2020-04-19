@@ -3,7 +3,7 @@
 
 {{signupForm.value | json}}
 
-<form [formGroup]="signupForm" class="col-11">
+<form [formGroup]="signupForm" class="col-11" >
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName" type="text" class="form-control" id="firstName" [(ngModel)]= "user.firstName">
