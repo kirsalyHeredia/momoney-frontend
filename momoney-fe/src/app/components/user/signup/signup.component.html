@@ -6,7 +6,7 @@
 <form [formGroup]="signupForm" class="col-11">
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName" type="text" class="form-control" id="firstName">
+        <input [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName" type="text" class="form-control" id="firstName" [(ngModel)]= "user.firstName">
         <div *ngIf="firstName.invalid && firstName.touched">
             <small *ngIf=firstName.errors?.required class="text-danger">This field is required</small>
             <small *ngIf=firstName.errors?.maxlength class="text-danger">First Name must be less than 40 characters</small>
@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName" type="text" class="form-control" id="lastName">
+        <input [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName" type="text" class="form-control" id="lastName" [(ngModel)]= "user.lastName">
         <div *ngIf="lastName.invalid && lastName.touched">
             <small *ngIf="lastName.errors?.required" class="text-danger">This field is required</small>
             <small *ngIf="lastName.errors?.maxlength" class="text-danger">First Name must be less than 40 characters</small>
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
         <label for="ssn">Social Security Number</label>
-        <input [class.is-invalid]="ssn.invalid && ssn.touched" formControlName="ssn" type="password" class="form-control" id="ssn">
+        <input [class.is-invalid]="ssn.invalid && ssn.touched" formControlName="ssn" type="password" class="form-control" id="ssn" [(ngModel)]= "user.ssn">
         <div *ngIf="ssn.invalid && ssn.touched">
             <small *ngIf="ssn.errors?.required" class="text-danger">This field is required</small>
             <small *ngIf="ssn.errors?.pattern" class="text-danger">SSN must be 9 numbers</small>
@@ -30,11 +30,11 @@
     </div>
     <div class="form-group">
         <label for="dob">Date of Birth</label>
-        <input formControlName="dob" type="date" class="form-control" id="dob">
+        <input formControlName="dob" type="date" class="form-control" id="dob" [(ngModel)]= user.dob>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input [class.is-invalid]="email.invalid && email.touched" formControlName="email" type="email" class="form-control" id="email">
+        <input [class.is-invalid]="email.invalid && email.touched" formControlName="email" type="email" class="form-control" id="email" [(ngModel)]= "user.email">
         <div *ngIf="email.invalid && email.touched">
             <small *ngIf="email.errors?.required" class="text-danger">This field is required</small>
             <small *ngIf="email.errors?.email" class="text-danger">Not a valid email</small>
@@ -42,7 +42,7 @@
     </div>
     <div class="form-group">
         <label for="phoneNum">Phone Number</label>
-        <input [class.is-invalid]="phoneNum.invalid && phoneNum.touched" formControlName="phoneNum" type="string" class="form-control" id="phoneNum" min="0">
+        <input [class.is-invalid]="phoneNum.invalid && phoneNum.touched" formControlName="phoneNum" type="string" class="form-control" id="phoneNum" min="0" [(ngModel)]= "user.phoneNum">
         <div *ngIf="phoneNum.invalid && phoneNum.touched">
             <small *ngIf="phoneNum.errors?.required" class="text-danger">This field is required</small>
             <small *ngIf="phoneNum.errors?.pattern" class="text-danger">Phone number must be 10 numbers</small>
@@ -50,7 +50,7 @@
     </div>
     <div class="form-group">
         <label for="username">Username</label>
-        <input [class.is-invalid]="username.invalid && username.touched" formControlName="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+        <input [class.is-invalid]="username.invalid && username.touched" formControlName="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp" [(ngModel)]= "user.username">
         <div *ngIf="username.invalid && username.touched">
             <small *ngIf="username.errors?.required" class="text-danger">This field is required</small>
             <small *ngIf="username.errors?.maxlength || username.errors?.minlength" class="text-danger">Must be between 8 and 40 characters</small>
@@ -66,31 +66,31 @@
     </div>
     <div class="form-group">
       <label for="confirmPassword">Confirm Password</label>
-      <input [class.is-invalid]="password.invalid && password.touched" formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword">
+      <input [class.is-invalid]="password.invalid && password.touched" formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" [(ngModel)]= "user.password">
       <small *ngIf="signupForm.errors?.mismatch" class="text-danger">Passwords do not match</small>
     </div>
     <div class="form-group">
         <label for="streetAdress">Street Adress</label>
-        <input formControlName="streetAdress" type="text" class="form-control" id="streetAdress">
+        <input formControlName="streetAdress" type="text" class="form-control" id="streetAdress" [(ngModel)]= "user.streetAddress">
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input formControlName="city" type="" class="form-control" id="city">
+      <input formControlName="city" type="" class="form-control" id="city" [(ngModel)]= "user.city">
     </div>
     <div class="form-group">
       <label for="state">State</label>
-      <select formControlName="state" class="form-control" id="state">
+      <select formControlName="state" class="form-control" id="state" [(ngModel)]= "user.state">
         <option>1</option>
         <option>2</option>
       </select>
     </div>
     <div class="form-group">
         <label for="zip">Zip Code</label>
-        <input formControlName="zip" type="number" class="form-control" id="zip">
+        <input formControlName="zip" type="number" class="form-control" id="zip" [(ngModel)]= "user.zipCode">
     </div>
     <div class="form-group">
         <label for="securityQuestion">Security Question</label>
-        <select [class.is-invalid]="securityQuestion.invalid && securityQuestion.touched" formControlName="securityQuestion" class="form-control" id="securityQuestion">
+        <select [class.is-invalid]="securityQuestion.invalid && securityQuestion.touched" formControlName="securityQuestion" class="form-control" id="securityQuestion" [(ngModel)]= "user.securityQuestion">
             <option>1</option>
             <option>2</option>
         </select>
@@ -98,7 +98,7 @@
     </div>
     <div class="form-group">
         <label for="securityQuestionAnswer">Answer to Security Question</label>
-        <input [class.is-invalid]="securityQuestionAnswer.invalid && securityQuestionAnswer.touched" formControlName="securityQuestionAnswer" type="text" class="form-control" id="securityQuestionAnswer">
+        <input [class.is-invalid]="securityQuestionAnswer.invalid && securityQuestionAnswer.touched" formControlName="securityQuestionAnswer" type="text" class="form-control" id="securityQuestionAnswer" [(ngModel)]= "user.securityQuestionAnswer">
         <small [class.d-none]="securityQuestionAnswer.valid || securityQuestionAnswer.untouched" class="text-danger">This field is required</small>
     </div>
 
