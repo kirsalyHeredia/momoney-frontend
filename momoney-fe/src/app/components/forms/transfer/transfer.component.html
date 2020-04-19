@@ -1,7 +1,7 @@
 <div class="container rec col-lg-4">
 
 <h1>Transfer Money</h1>
-<form class="col-11">
+<form [formGroup]="transferForm" class="col-11">
     <div class="form-group">
         <label for="Amount">Amount</label>
         <input type="number" class="form-control" id="amount" min="1">

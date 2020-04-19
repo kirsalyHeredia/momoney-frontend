@@ -10,7 +10,9 @@ import { PasswordValidator } from 'src/app/validation/password.validator';
 export class SignupComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
-
+  date = new Date();
+  currentDate = this.date.getFullYear()+'-'+(this.date.getMonth()+1)+'-'+this.date.getDate();
+  
   get firstName(){
     return this.signupForm.get('firstName');
   }
@@ -52,7 +54,7 @@ export class SignupComponent implements OnInit {
     lastName: ['',[Validators.required, Validators.maxLength(40)]],
     ssn: ['',[Validators.required, Validators.pattern('^[0-9]{9}$')]],
     dob: ['',Validators.required],
-    email: ['',[Validators.required, Validators.email]],
+    email: ['',[Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
     phoneNum: ['',[Validators.required, Validators.pattern('^[0-9]{10}$')]],
     username: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(40)]],
     password: ['',[Validators.required, Validators.pattern('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$')]],
@@ -66,6 +68,7 @@ export class SignupComponent implements OnInit {
   }, { validator: PasswordValidator});
 
   ngOnInit(): void {
+    console.log(this.currentDate);
   }
 
 }
