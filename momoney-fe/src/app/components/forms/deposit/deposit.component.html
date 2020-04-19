@@ -1,6 +1,6 @@
 <div class="container rec col-lg-4">
 <h1>Deposit Checks</h1>
-<form class="col-11">
+<form [formGroup]="depositForm" class="col-11">
     <div class="form-group">
         <label for="Amount">Amount</label>
         <input type="number" class="form-control" id="amount" min="1" required>
